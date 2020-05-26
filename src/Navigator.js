@@ -17,7 +17,7 @@ const Navigation = () => (
             <Stack.Screen name='HomeConsultas' component={HomeConsultasScreen} options={{headerShown: false}}/>
             <Stack.Screen name='Disponibles' component={DisponiblesScreen}
                           options={{headerShown: false}}/>
-            <Stack.Screen name='InfoConsultas' component={InfoConsultaScreen}
+            <Stack.Screen name='InfoConsulta' component={InfoConsultaScreen}
                           options={{headerShown: false}}/>
         </Stack.Navigator>
     </NavigationContainer>

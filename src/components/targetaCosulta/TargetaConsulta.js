@@ -1,7 +1,10 @@
 import React, {useState} from 'react';
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {useNavigation} from '@react-navigation/native'
 
-const TargetaConsulta = ({tipo, nombrePaciente,fecha, hora, estado, descripcion,direccion, navigation}) => {
+const TargetaConsulta = ({tipo, nombrePaciente,fecha, hora, estado, descripcion,direccion}) => {
+
+    const navigation = useNavigation();
 
     const propsInfoConsulta = {
         tipo: tipo,
