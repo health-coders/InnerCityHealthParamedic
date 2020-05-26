@@ -9,18 +9,19 @@ const HomeConsultasScreen = ({navigation}) => {
                 style={styles.btnPrincipal}>
                 <Text
                     style={styles.textoBtn}
-
                 >
                     CONSULTAS DISPONIBLES
                 </Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.btnPrincipal} onPress={() => navigation.navigate('Pendientes')}>
+            <TouchableOpacity style={styles.btnPrincipal}
+                              onPress={() => navigation.navigate('Pendientes')}
+            >
                 <Text style={styles.textoBtn}> CONSULTAS PENDIENTES</Text>
             </TouchableOpacity>
 
             <TouchableOpacity style={styles.btnPrincipal}>
-                <Text style={styles.textoBtn}> CONSULTAS REGISTRO</Text>
+                <Text style={styles.textoBtn}>REGISTRO CONSULTAS </Text>
             </TouchableOpacity>
 
 

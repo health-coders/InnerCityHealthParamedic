@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {useNavigation} from "@react-navigation/core";
 
 const TargetaConsulta = ({info}) => {
 

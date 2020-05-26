@@ -4,25 +4,25 @@ import TargetaConsulta from '../../components/targetaCosulta/TargetaConsulta';
 
 const PendientesScreen = ({navigation}) => {
 
-    const [consultas, guardarConsultas] = useState([{
+    const [info, guardarInfo] = useState([{
         tipo: 'General',
         nombrePaciente: 'Kevin Pérez',
         fecha: 'Hoy',
         Hora: 'Ahora',
         estado: false,
         descripcion: 'Descripción muy crack de la cita',
-        dirección: 'Cra 84 #33 AA-01',
+        direccion: 'Cra 84 #33 AA-01',
     }]);
 
     useEffect(() => {
-        guardarConsultas([...consultas, {
+        guardarInfo([...info, {
             tipo: 'General',
             nombrePaciente: 'Kevin Pérez',
             fecha: 'Hoy',
             Hora: 'Ahora',
             estado: false,
             descripcion: 'Descripción muy crack de la cita',
-            dirección: 'Cra 84 #33 AA-01',
+            direccion: 'Cra 84 #33 AA-01',
         },
             {
                 tipo: 'General',
@@ -31,7 +31,7 @@ const PendientesScreen = ({navigation}) => {
                 Hora: 'Ahora',
                 estado: false,
                 descripcion: 'Descripción muy crack de la cita',
-                dirección: 'Cra 84 #33 AA-01',
+                direccion: 'Cra 84 #33 AA-01',
             }, {
                 tipo: 'General',
                 nombrePaciente: 'Kevin Pérez',
@@ -39,24 +39,24 @@ const PendientesScreen = ({navigation}) => {
                 Hora: 'Ahora',
                 estado: false,
                 descripcion: 'Descripción muy crack de la cita',
-                dirección: 'Cra 84 #33 AA-01',
+                direccion: 'Cra 84 #33 AA-01',
             }]);
     }, []);
 
     return (
         <ScrollView style={styles.contenedor}>
             <FlatList
-                data={consultas}
-                keyExtractor={(consulta) => consulta.nombre}
-                renderItem={(consulta) => (
+                data={info}
+                keyExtractor={(info) => info.nombrePaciente}
+                renderItem={(info) => (
                     <TargetaConsulta
-                        descripcion={consulta.descripcion}
-                        tipo={consulta.tipo}
-                        nombrePaciente={consulta.nombrePaciente}
-                        direccion={consulta.direccion}
-                        estado={consulta.estado}
-                        fecha={consulta.fecha}
-                        hora={consulta.hora}
+                        descripcion={info.descripcion}
+                        tipo={info.tipo}
+                        nombrePaciente={info.nombrePaciente}
+                        direccion={info.direccion}
+                        estado={info.estado}
+                        fecha={info.fecha}
+                        hora={info.hora}
                         navigation={navigation}
                     />
                 )}
