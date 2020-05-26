@@ -1,13 +1,19 @@
 import React from 'react';
 import {StyleSheet, Text, TouchableOpacity} from 'react-native';
 
-const HomeScreen = () => {
+const HomeScreen = ({navigation}) => {
     return (
         <>
             <TouchableOpacity style={styles.btnPrincipal}>
+
                 <Text style={styles.textoBtn}>Ver{'\n'}alertas</Text>
+
             </TouchableOpacity>
-            <TouchableOpacity style={styles.btnPrincipal}>
+            <TouchableOpacity style={styles.btnPrincipal} onPress={()=>
+
+                navigation.navigate('HomeConsultas')
+
+            }>
                 <Text style={styles.textoBtn}>Ver{'\n'}consultas</Text>
             </TouchableOpacity>
         </>
