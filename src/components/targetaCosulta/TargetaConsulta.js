@@ -2,46 +2,42 @@ import React, {useState} from 'react';
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import {useNavigation} from '@react-navigation/native'
 
-const TargetaConsulta = ({tipo, nombrePaciente,fecha, hora, estado, descripcion,direccion}) => {
+const TargetaConsulta = ({info}) => {
 
     const navigation = useNavigation();
 
-    const propsInfoConsulta = {
-        tipo: tipo,
-        fecha: fecha,
-        hora: hora,
-        estado: estado,
-        descripcion: descripcion,
-        nombrePaciente:nombrePaciente,
-        direccion:direccion
-    };
+    console.log(info)
+
     return (
         <>
             <View style={styles.targetaConsulta}>
                 <View>
                     <Text style={styles.texto}>
-                        Tipo: {tipo}
+                        Tipo: {info.tipo}
                     </Text>
                     <Text style={styles.texto}>
-                        Fecha: {fecha}
+                        Fecha: {info.fecha}
                     </Text>
                     <Text style={styles.texto}>
-                        Hora: {hora}
+                        Hora: {info.hora}
                     </Text>
                 </View>
                 <Text>CORREGIR COLORES Y NAVIGATION</Text>
                 <View style={{flexDirection: 'row'}}>
                     <Text style={styles.texto}> Estado: </Text>
 
-                    <View style={{color: estado ? '#24fd66' : '#ff2e2e', borderRadius: 8, borderColor: '#000'}}>
-                        <Text style={{fontSize: 18}}> {estado ? 'Agendada' : 'En espera'}</Text>
+                    <View style={{borderRadius: 8, borderColor: '#000'}}>
+                        <Text style={{
+                            fontSize: 18,
+                            color: info.estado ? '#24fd66' : '#ff2e2e'
+                        }}> {info.estado ? 'Agendada' : 'En espera'}</Text>
                     </View>
 
                     <TouchableOpacity
                         style={styles.botonMasInfo}
-                        onPress={() => navigation.navigate('InfoConsulta', propsInfoConsulta)}
+                        onPress={() => navigation.navigate('InfoConsulta', info)}
                     >
-                        <Text>Más info.</Text>
+                        <Text style={{color: '#fff'}}>Más info.</Text>
 
                     </TouchableOpacity>
                 </View>

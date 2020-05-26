@@ -2,7 +2,7 @@ import React from 'react';
 import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 
 
-const InfoConsultaScreen = ({tipo, fecha, hora, direccion, estado, descripcion, nombrePaciente, navigation}) => {
+const InfoConsultaScreen = () => {
     return (
         <>
             <Text style={styles.titulo}>
@@ -27,8 +27,8 @@ const InfoConsultaScreen = ({tipo, fecha, hora, direccion, estado, descripcion, 
             <View style={{flexDirection: 'row'}}>
                 <Text style={{fontSize: 18}}> Estado: {estado ? 'Agendada' : 'En espera'}</Text>
 
-                <TouchableOpacity style={styles.btnVolver}>
-                    <Text>Volver</Text>
+                <TouchableOpacity style={styles.btnVolver} onPress={()=> navigation.goBack()}>
+                    <Text style={{color:'#fff'}}>Volver</Text>
                 </TouchableOpacity>
             </View>
         </>
