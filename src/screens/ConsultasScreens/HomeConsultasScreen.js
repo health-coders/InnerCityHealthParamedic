@@ -4,16 +4,13 @@ import {StyleSheet, Text, TouchableOpacity} from 'react-native';
 const HomeConsultasScreen = ({navigation}) => {
     return (
         <>
-            <TouchableOpacity style={styles.btnPrincipal}>
-                <Text
-                    style={styles.textoBtn}
-                    onPress={() => navigation.navigate('Disponibles')}
-                >
+            <TouchableOpacity style={styles.btnPrincipal} onPress={() => navigation.navigate('Disponibles')}>
+                <Text style={styles.textoBtn}>
                     CONSULTAS DISPONIBLES
                 </Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.btnPrincipal}>
+            <TouchableOpacity style={styles.btnPrincipal} onPress={() => navigation.navigate('Pendientes')}>
                 <Text style={styles.textoBtn}> CONSULTAS PENDIENTES</Text>
             </TouchableOpacity>
 
