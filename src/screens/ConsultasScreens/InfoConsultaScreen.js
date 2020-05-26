@@ -1,31 +1,35 @@
 import React from 'react';
-import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
+import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';import {useNavigation} from '@react-navigation/native'
 
 
-const InfoConsultaScreen = () => {
+const InfoConsultaScreen = ({route}) => {
+
+    const info = route.params;
+
+    const navigation = useNavigation();
     return (
         <>
             <Text style={styles.titulo}>
-                {tipo}
+                {info.tipo}
             </Text>
 
             <View>
                 <Text style={{fontWeight: 'bold', fontSize: 20}}>
-                    Nombre: {nombrePaciente}
+                    Nombre: {info.nombrePaciente}
                 </Text>
-                <Text>Tipo: {tipo}</Text>
+                <Text>Tipo: {info.tipo}</Text>
                 <Text style={{borderBottomColor: '#000'}}> </Text>
-                <Text>Descripción: {descripcion}</Text>
+                <Text>Descripción: {info.descripcion}</Text>
             </View>
 
             <View>
-                <Text>Fecha: {fecha}</Text>
-                <Text>Hora: {hora}</Text>
-                <Text>Dirección {direccion}</Text>
+                <Text>Fecha: {info.fecha}</Text>
+                <Text>Hora: {info.hora}</Text>
+                <Text>Dirección {info.direccion}</Text>
             </View>
 
             <View style={{flexDirection: 'row'}}>
-                <Text style={{fontSize: 18}}> Estado: {estado ? 'Agendada' : 'En espera'}</Text>
+                <Text style={{fontSize: 18}}> Estado: {info.estado ? 'Agendada' : 'En espera'}</Text>
 
                 <TouchableOpacity style={styles.btnVolver} onPress={()=> navigation.goBack()}>
                     <Text style={{color:'#fff'}}>Volver</Text>
@@ -39,6 +43,8 @@ const styles = StyleSheet.create({
     titulo: {
         fontWeight: 'bold',
         fontSize: 30,
+        textAlign:'center',
+        marginVertical:10
     },
     btnVolver: {
         backgroundColor: '#792bff',

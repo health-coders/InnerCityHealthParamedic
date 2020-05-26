@@ -22,7 +22,6 @@ const TargetaConsulta = ({info}) => {
                         Hora: {info.hora}
                     </Text>
                 </View>
-                <Text>CORREGIR COLORES Y NAVIGATION</Text>
                 <View style={{flexDirection: 'row'}}>
                     <Text style={styles.texto}> Estado: </Text>
 
