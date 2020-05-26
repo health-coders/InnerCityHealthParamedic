@@ -15,7 +15,7 @@ const HomeConsultasScreen = ({navigation}) => {
                 </Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.btnPrincipal}>
+            <TouchableOpacity style={styles.btnPrincipal} onPress={() => navigation.navigate('Pendientes')}>
                 <Text style={styles.textoBtn}> CONSULTAS PENDIENTES</Text>
             </TouchableOpacity>
 
