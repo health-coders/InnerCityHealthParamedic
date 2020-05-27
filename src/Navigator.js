@@ -15,8 +15,7 @@ const Stack = createStackNavigator();
 
 const Navigation = () => (
     <NavigationContainer>
-        <Stack.Navigator initialRouteName='LoginParamedicos'>
-            <Stack.Screen name='LoginParamedicos' component={LoginParamedicosScreen} options={{headerShown: false}}/>
+        <Stack.Navigator>
             <Stack.Screen name='Home' component={HomeScreen} options={{headerShown: false}}/>
             <Stack.Screen name='HomeConsultas' component={HomeConsultasScreen} options={{headerShown: false}}/>
             <Stack.Screen name='Disponibles' component={DisponiblesScreen}
