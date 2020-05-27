@@ -1,8 +1,8 @@
 import React from 'react';
-import {StyleSheet, Text, TouchableOpacity} from 'react-native';
-import TargetaConsulta from "../../components/targetaCosulta/TargetaConsulta";
+import {StyleSheet, Text} from 'react-native';
+import TarjetaConsulta from "../../components/tarjetaCosulta/TarjetaConsulta";
 
-const ConsultasRegistradasScreen = ({navigation}) => {
+const ConsultasRegistradasScreen = () => {
 
     const info = {
         tipo: 'General',
@@ -17,7 +17,7 @@ const ConsultasRegistradasScreen = ({navigation}) => {
     return (
         <>
             <Text style={styles.title}>Consultas </Text>
-            <TargetaConsulta info={info}/>
+            <TarjetaConsulta info={info}/>
         </>
     );
 };
