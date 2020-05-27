@@ -1,44 +1,51 @@
 import React from 'react';
-import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
-import {useNavigation} from '@react-navigation/native'
-
+import {StyleSheet, Text, View, ScrollView, TouchableOpacity} from 'react-native';
+import {useNavigation} from '@react-navigation/native';
 
 const InfoConsultaScreen = ({route}) => {
 
     const info = route.params;
 
     const navigation = useNavigation();
+
+    //TODO: Este componente dependerá del estado. Ajustar esta propiedad a los tres tipos de botones.
+    const BotonesAcciones = () => {
+        if (!info.estado) {
+            return <TouchableOpacity style={styles.btnVolver}>
+                <Text style={{color: '#fff', fontWeight: 'bold', fontSize: 15}}>Iniciar viaje</Text>
+            </TouchableOpacity>;
+        }
+        return null;
+
+    };
+
     return (
         <>
-            <View style={styles.infoConsulta}>
+            <ScrollView style={styles.container}>
                 <Text style={styles.titulo}>
-                    {info.tipo}
+                    Consulta {info.tipo}
                 </Text>
 
                 <View>
-                    <Text style={{fontWeight: 'bold', fontSize: 20}}>
-                        Nombre: {info.nombrePaciente}
+                    <Text style={styles.texto}>
+                        Paciente:
+                        <Text style={{fontWeight: 'bold', fontSize: 20}}>{info.nombrePaciente + '\n'}</Text>
                     </Text>
-                    <View>
-                        <Text style={{fontWeight: 'bold'}}>Tipo: {info.tipo}</Text>
-                        <Text style={{fontWeight: 'bold'}}>Descripción: {info.descripcion}</Text>
-                    </View>
+
+                    <Text style={styles.texto}>Descripción: {info.descripcion  + '\n'}</Text>
+                    <Text style={styles.texto}>Fecha: {info.fecha}</Text>
+                    <Text style={styles.texto}>Hora: {info.hora}</Text>
+                    <Text style={styles.texto}>Dirección {info.direccion}</Text>
+
                 </View>
 
                 <View>
-                    <Text>Fecha: {info.fecha}</Text>
-                    <Text>Hora: {info.hora}</Text>
-                    <Text>Dirección {info.direccion}</Text>
-                </View>
-
-                <View style={{flexDirection: 'row'}}>
-                    <Text style={{fontSize: 18}}> Estado: {info.estado ? 'Agendada' : 'En espera'}</Text>
-
                     <TouchableOpacity style={styles.btnVolver} onPress={() => navigation.goBack()}>
-                        <Text style={{color: '#fff'}}>Volver</Text>
+                        <Text style={{color: '#fff', fontWeight: 'bold', fontSize: 15}}>Volver</Text>
                     </TouchableOpacity>
+                    <BotonesAcciones/>
                 </View>
-            </View>
+            </ScrollView>
         </>
     );
 };
@@ -48,30 +55,23 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         fontSize: 30,
         textAlign: 'center',
-        marginVertical: 10
+        marginVertical: 10,
     },
     btnVolver: {
-        backgroundColor: '#792bff',
-        borderRadius: 8,
-        marginLeft: 30,
-        padding: 5,
-        paddingHorizontal: 10,
-        alignItems: 'center'
+        backgroundColor: '#5a00ff',
+        borderRadius: 5,
+        paddingVertical: 8,
+        paddingHorizontal: 15,
+        marginVertical: 20,
+        alignSelf: 'flex-start',
     },
-    infoConsulta: {
-        borderRadius: 7,
-        backgroundColor: '#e8e8e8',
-        marginTop:10,
-        shadowColor: '#000',
-        shadowOffset: {width: 0, height: 2},
-        shadowOpacity: 0.8,
-        shadowRadius: 2,
-        elevation: 5,
-        width: '90%',
-        padding: 20,
+    container: {
+        padding: 10,
         marginHorizontal: 20,
-        alignItems: 'center',
-    }
+    },
+    texto: {
+        fontSize: 20,
+    },
 });
 
 export default InfoConsultaScreen;
