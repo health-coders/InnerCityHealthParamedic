@@ -21,7 +21,11 @@ const HomeConsultasScreen = ({navigation}) => {
             </TouchableOpacity>
 
             <TouchableOpacity style={styles.btnPrincipal}>
-                <Text style={styles.textoBtn}>REGISTRO CONSULTAS </Text>
+                <Text
+                    style={styles.textoBtn}
+                    onPress={() => navigation.navigate('Registradas')}
+                >REGISTRO CONSULTAS
+                </Text>
             </TouchableOpacity>
 
 
