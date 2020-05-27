@@ -1,60 +1,46 @@
 import React from 'react';
-import {StyleSheet, Text, View, ScrollView, TouchableOpacity, Alert} from 'react-native';
+import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
+import {useNavigation} from '@react-navigation/native'
 
-const InfoConsultaScreen = ({navigation, route}) => {
 
-    const cita = route.params;
+const InfoConsultaScreen = ({route}) => {
 
-    const cancelarCita = () => {
+    const info = route.params;
 
-        Alert.alert('No puede cancelar', 'Recuerde que para hacer la cancelación' +
-            'debe hacerlo con, al menos, dos días de anticipación',
-            ['Ok']);
-
-        setTimeout(() => {
-            navigation.navigate('CancelarConsulta', cita);
-        }, 1500);
-    };
-
-    //TODO: Este componente dependerá del estado. Ajustar esta propiedad a los tres tipos de botones.
-    const BotonesAcciones = () => {
-        if (!cita.estado) {
-            return <View>
-                <TouchableOpacity style={styles.btnViaje}>
-                    <Text style={{color: '#fff', fontWeight: 'bold', fontSize: 15}}>Iniciar viaje</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.btnCancelar} onPress={cancelarCita}>
-                    <Text style={{color: '#fff', fontWeight: 'bold', fontSize: 15}}>Cancelar cita</Text>
-                </TouchableOpacity>
-            </View>;
-        }
-        return null;
-
-    };
-
+    const navigation = useNavigation();
     return (
         <>
-            <ScrollView style={styles.container}>
+            <View style={styles.infoConsulta}>
                 <Text style={styles.titulo}>
-                    Consulta {cita.tipo}
+                    {info.tipo}
                 </Text>
 
                 <View>
-                    <Text style={styles.texto}>
-                        Paciente:
-                        <Text style={{fontWeight: 'bold', fontSize: 20}}> {cita.nombrePaciente + '\n'}</Text>
+                    <Text style={{fontWeight: 'bold', fontSize: 20}}>
+                        Nombre: {info.nombrePaciente}
                     </Text>
-
-                    <Text style={styles.texto}>Descripción: {cita.descripcion + '\n'}</Text>
-                    <Text style={styles.texto}>Fecha: {cita.fecha}</Text>
-                    <Text style={styles.texto}>Hora: {cita.hora}</Text>
-                    <Text style={styles.texto}>Dirección {cita.direccion}</Text>
-                    <BotonesAcciones/>
+                    <View>
+                        <Text style={{fontWeight: 'bold'}}>Tipo: {info.tipo}</Text>
+                        <Text style={{fontWeight: 'bold'}}>Descripción: {info.descripcion}</Text>
+                    </View>
                 </View>
-            </ScrollView>
+
+                <View>
+                    <Text>Fecha: {info.fecha}</Text>
+                    <Text>Hora: {info.hora}</Text>
+                    <Text>Dirección {info.direccion}</Text>
+                </View>
+
+                <View style={{flexDirection: 'row'}}>
+                    <Text style={{fontSize: 18}}> Estado: {info.estado ? 'Agendada' : 'En espera'}</Text>
+
+                    <TouchableOpacity style={styles.btnVolver} onPress={() => navigation.goBack()}>
+                        <Text style={{color: '#fff'}}>Volver</Text>
+                    </TouchableOpacity>
+                </View>
+            </View>
         </>
-    )
-        ;
+    );
 };
 
 const styles = StyleSheet.create({
@@ -62,31 +48,30 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         fontSize: 30,
         textAlign: 'center',
-        marginVertical: 10,
+        marginVertical: 10
     },
-    btnViaje: {
-        backgroundColor: '#5a00ff',
-        borderRadius: 5,
-        paddingVertical: 8,
-        paddingHorizontal: 15,
-        marginVertical: 20,
-        alignSelf: 'flex-start',
+    btnVolver: {
+        backgroundColor: '#792bff',
+        borderRadius: 8,
+        marginLeft: 30,
+        padding: 5,
+        paddingHorizontal: 10,
+        alignItems: 'center'
     },
-    btnCancelar: {
-        backgroundColor: '#ff2d2d',
-        borderRadius: 5,
-        paddingVertical: 8,
-        paddingHorizontal: 15,
-        marginVertical: 20,
-        alignSelf: 'flex-start',
-    },
-    container: {
-        padding: 10,
+    infoConsulta: {
+        borderRadius: 7,
+        backgroundColor: '#e8e8e8',
+        marginTop:10,
+        shadowColor: '#000',
+        shadowOffset: {width: 0, height: 2},
+        shadowOpacity: 0.8,
+        shadowRadius: 2,
+        elevation: 5,
+        width: '90%',
+        padding: 20,
         marginHorizontal: 20,
-    },
-    texto: {
-        fontSize: 20,
-    },
+        alignItems: 'center',
+    }
 });
 
 export default InfoConsultaScreen;

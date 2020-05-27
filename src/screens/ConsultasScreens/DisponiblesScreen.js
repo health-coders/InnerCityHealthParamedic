@@ -1,6 +1,6 @@
 import React from 'react';
 import {StyleSheet, Text, TouchableOpacity} from 'react-native';
-import TarjetaConsulta from "../../components/tarjetaCosulta/TarjetaConsulta";
+import TargetaConsulta from "../../components/targetaCosulta/TargetaConsulta";
 
 const DisponiblesScreen = ({navigation}) => {
 
@@ -17,7 +17,7 @@ const DisponiblesScreen = ({navigation}) => {
     return (
         <>
             <Text style={styles.title}>Consultas </Text>
-            <TarjetaConsulta info={info} />
+            <TargetaConsulta info={info} />
         </>
     );
 };
