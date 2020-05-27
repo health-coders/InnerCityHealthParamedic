@@ -8,12 +8,14 @@ import HomeConsultasScreen from './screens/ConsultasScreens/HomeConsultasScreen'
 import DisponiblesScreen from './screens/ConsultasScreens/DisponiblesScreen';
 import InfoConsultaScreen from './screens/ConsultasScreens/InfoConsultaScreen';
 import PendientesScreen from './screens/ConsultasScreens/PendientesScreen';
+import LoginParamedicosScreen from "./screens/registrosScreen/LoginParamedicosScreen";
 
 const Stack = createStackNavigator();
 
 const Navigation = () => (
     <NavigationContainer>
-        <Stack.Navigator>
+        <Stack.Navigator initialRouteName='LoginParamedicos'>
+            <Stack.Screen name='LoginParamedicos' component={LoginParamedicosScreen} options={{headerShown: false}}/>
             <Stack.Screen name='Home' component={HomeScreen} options={{headerShown: false}}/>
             <Stack.Screen name='HomeConsultas' component={HomeConsultasScreen} options={{headerShown: false}}/>
             <Stack.Screen name='Disponibles' component={DisponiblesScreen}

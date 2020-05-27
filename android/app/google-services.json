@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "88537798095",
+    "firebase_url": "https://innercityhealth-c1b62.firebaseio.com",
+    "project_id": "innercityhealth-c1b62",
+    "storage_bucket": "innercityhealth-c1b62.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:88537798095:android:436bf3087aa29444e22eba",
+        "android_client_info": {
+          "package_name": "com.innercityhealthparamedicos"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "88537798095-3e9rtu6nnebh40tu33220n4b1epmv4s1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.innercityhealthparamedicos",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "88537798095-3f7ggelv2irvaol87med3s7c4u7hv3uh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBY79voOub3FKMJN1cgqgqSmUe7t96K6q0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "88537798095-3f7ggelv2irvaol87med3s7c4u7hv3uh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
