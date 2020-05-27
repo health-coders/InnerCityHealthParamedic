@@ -2,13 +2,10 @@ import React, {useState} from 'react';
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import {useNavigation} from '@react-navigation/core';
 
-const TargetaConsulta = ({info}) => {
+const TarjetaConsulta = ({info}) => {
 
     const {item} = info;
-
     const navigation = useNavigation();
-
-    console.log(info);
 
     return (
         <>
@@ -69,4 +66,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default TargetaConsulta;
+export default TarjetaConsulta;
