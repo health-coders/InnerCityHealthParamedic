@@ -1,18 +1,27 @@
 import React from 'react';
 import {Image, Text, TouchableOpacity, StyleSheet, View} from 'react-native';
 import {GoogleSignin, statusCodes} from '@react-native-community/google-signin';
+import {useNavigation} from "@react-navigation/core";
 
-export default class GoogleAuthButton extends React.Component {
 
-    componentDidMount() {
-        GoogleSignin.configure();
-    }
 
-    signIn = async () => {
+const GoogleAuthButton = (props) => {
+
+    GoogleSignin.configure()
+
+    const navigation = useNavigation();
+
+    const isSignedIn = async () => {
+        const isSignedIn = await GoogleSignin.isSignedIn();
+        this.setState({isLoginScreenPresented: !isSignedIn});
+    };
+
+    const signIn = async () => {
         try {
             await GoogleSignin.hasPlayServices();
             const userInfo = await GoogleSignin.signIn();
             console.log(userInfo);
+
         } catch (error) {
             if (error.code === statusCodes.SIGN_IN_CANCELLED) {
                 // user cancelled the login flow
@@ -25,23 +34,24 @@ export default class GoogleAuthButton extends React.Component {
             }
             console.log(error);
         }
+        navigation.navigate('Home')
     };
 
-    render() {
-        return (
-            <TouchableOpacity
-                style={styles.googleBtn}
-                onPress={this.signIn}
-            >
-                <Image
-                    style={styles.googleLogo}
-                    source={require('../../../assets/images/googleLogo.png')}
-                />
-                <Text style={styles.googleBtnText}>Registro con Google</Text>
-            </TouchableOpacity>
-        );
-    }
+
+    return (
+        <TouchableOpacity
+            style={styles.googleBtn}
+            onPress={signIn}
+        >
+            <Image
+                style={styles.googleLogo}
+                source={require('../../../assets/images/googleLogo.png')}
+            />
+            <Text style={styles.googleBtnText}>Registro con Google</Text>
+        </TouchableOpacity>
+    );
 }
+
 
 const styles = StyleSheet.create({
     googleBtn: {
@@ -72,3 +82,4 @@ const styles = StyleSheet.create({
         marginRight: 10
     },
 });
+export default GoogleAuthButton;
