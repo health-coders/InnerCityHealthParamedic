@@ -77,7 +77,8 @@ const styles = StyleSheet.create({
         borderRadius: 5,
         paddingVertical: 8,
         paddingHorizontal: 15,
-        marginVertical: 20,
+        marginTop: 20,
+        marginBottom: 50,
         alignSelf: 'flex-start',
     },
     container: {

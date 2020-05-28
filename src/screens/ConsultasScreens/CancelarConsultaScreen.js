@@ -26,6 +26,7 @@ const CancelarConsultaScreen = ({navigation, route, onEliminarCitaPendiente}) =>
             <Text style={styles.titulo}>Motivo de cancelación</Text>
             <TextInput
                 style={styles.inputMotivo}
+                multiline
                 placeholder='Motivo de la cancelación de la cita...'
                 placeholderTextColor='gray'
                 onChangeText={(text)=>{
@@ -65,10 +66,13 @@ const styles = StyleSheet.create({
         width: '90%',
         height: 100,
         backgroundColor: '#ffffff',
-        borderColor: '#c6c6c6',
-        borderWidth: 1,
         borderRadius: 5,
-        alignSelf: 'center'
+        alignSelf: 'center',
+        shadowColor: '#000',
+        shadowOffset: {width: 0, height: 2},
+        shadowOpacity: 0.8,
+        shadowRadius: 2,
+        elevation: 3,
     },
 });
 
