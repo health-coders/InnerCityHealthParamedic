@@ -5,7 +5,7 @@ import {useNavigation} from "@react-navigation/core";
 
 
 
-const GoogleAuthButton = (props) => {
+const GoogleAuthButton = () => {
 
     GoogleSignin.configure()
 
@@ -45,7 +45,7 @@ const GoogleAuthButton = (props) => {
         >
             <Image
                 style={styles.googleLogo}
-                source={require('../../../assets/images/googleLogo.png')}
+                source={require('../../assets/images/googleLogo.png')}
             />
             <Text style={styles.googleBtnText}>Registro con Google</Text>
         </TouchableOpacity>
