@@ -20,6 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="31b2a8c6-d7ea-40ea-9e48-6cc8de3340e8" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/.gradle/6.0.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/6.0.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/.gradle/6.0.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/6.0.1/executionHistory/executionHistory.lock" afterDir="false" />
@@ -31,7 +32,7 @@
       <change beforePath="$PROJECT_DIR$/android/.gradle/6.0.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/6.0.1/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/.gradle/6.0.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/6.0.1/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/src/main/java/com/innercityhealthparamedicos/MainApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/src/main/java/com/innercityhealthparamedicos/MainApplication.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +82,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="030f75ce-105d-4051-b2ff-c8f54af25de2" name="Default Changelist" comment="" />
+      <changelist id="31b2a8c6-d7ea-40ea-9e48-6cc8de3340e8" name="Default Changelist" comment="" />
       <created>1590456238758</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -103,6 +104,7 @@
       <workItem from="1590614380646" duration="1201000" />
       <workItem from="1590635121313" duration="3142000" />
       <workItem from="1590643306665" duration="6945000" />
+      <workItem from="1590652691868" duration="2217000" />
     </task>
     <servers />
   </component>
@@ -137,26 +139,26 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="412" y="110" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1590462460639" />
-    <state width="1897" height="281" key="GridCell.Tab.0.bottom" timestamp="1590652063402">
+    <state width="1897" height="281" key="GridCell.Tab.0.bottom" timestamp="1590652724937">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state width="1343" height="406" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1590573048636" />
-    <state width="1897" height="281" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1590652063402" />
-    <state width="1897" height="281" key="GridCell.Tab.0.center" timestamp="1590652063402">
+    <state width="1897" height="281" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1590652724937" />
+    <state width="1897" height="281" key="GridCell.Tab.0.center" timestamp="1590652724936">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state width="1343" height="406" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1590573048636" />
-    <state width="1897" height="281" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1590652063402" />
-    <state width="1897" height="281" key="GridCell.Tab.0.left" timestamp="1590652063401">
+    <state width="1897" height="281" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1590652724936" />
+    <state width="1897" height="281" key="GridCell.Tab.0.left" timestamp="1590652724936">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state width="1343" height="406" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1590573048636" />
-    <state width="1897" height="281" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1590652063401" />
-    <state width="1897" height="281" key="GridCell.Tab.0.right" timestamp="1590652063402">
+    <state width="1897" height="281" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1590652724936" />
+    <state width="1897" height="281" key="GridCell.Tab.0.right" timestamp="1590652724936">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state width="1343" height="406" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1590573048636" />
-    <state width="1897" height="281" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1590652063402" />
+    <state width="1897" height="281" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1590652724936" />
     <state x="339" y="162" key="run.anything.popup" timestamp="1590648221304">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
