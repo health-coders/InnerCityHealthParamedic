@@ -6,8 +6,6 @@ const TarjetaConsulta = ({info}) => {
 
     const {item} = info;
 
-    console.log(info);
-
     const navigation = useNavigation();
 
     return (
