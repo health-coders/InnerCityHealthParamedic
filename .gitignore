@@ -23,7 +23,6 @@ DerivedData
 
 # Android/IntelliJ
 #
-
 .idea
 local.properties
 *.iml
@@ -42,4 +41,19 @@ buck-out/
 
 # fastlane
 #
-# It is recommended to not store the screenshots in the git repo. Instead, us
+# It is recommended to not store the screenshots in the git repo. Instead, use fastlane to re-generate the
+# screenshots whenever they are needed.
+# For more information about the recommended setup visit:
+# https://docs.fastlane.tools/best-practices/source-control/
+
+*/fastlane/report.xml
+*/fastlane/Preview.html
+*/fastlane/screenshots
+
+# Bundle artifact
+*.jsbundle
+
+# CocoaPods
+/ios/Pods/
+
+yarn.lock
