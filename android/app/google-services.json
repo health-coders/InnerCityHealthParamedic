@@ -1,42 +1,42 @@
 {
   "project_info": {
-    "project_number": "88537798095",
-    "firebase_url": "https://innercityhealth-c1b62.firebaseio.com",
-    "project_id": "innercityhealth-c1b62",
-    "storage_bucket": "innercityhealth-c1b62.appspot.com"
+    "project_number": "1087652730233",
+    "firebase_url": "https://innercityhealth-92203.firebaseio.com",
+    "project_id": "innercityhealth-92203",
+    "storage_bucket": "innercityhealth-92203.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:88537798095:android:436bf3087aa29444e22eba",
+        "mobilesdk_app_id": "1:1087652730233:android:429f46b45027d644ce0ba8",
         "android_client_info": {
-          "package_name": "com.innercityhealthparamedicos"
+          "package_name": "com.com.innercityhealthparamedicos"
         }
       },
       "oauth_client": [
         {
-          "client_id": "88537798095-3e9rtu6nnebh40tu33220n4b1epmv4s1.apps.googleusercontent.com",
+          "client_id": "1087652730233-7ac3d1pbm3a9opg26sguqlivejqif09r.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.innercityhealthparamedicos",
+            "package_name": "com.com.innercityhealthparamedicos",
             "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
           }
         },
         {
-          "client_id": "88537798095-3f7ggelv2irvaol87med3s7c4u7hv3uh.apps.googleusercontent.com",
+          "client_id": "1087652730233-4fnr7u1pg2f2kmijeunle8s1tnhhdv6l.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBY79voOub3FKMJN1cgqgqSmUe7t96K6q0"
+          "current_key": "AIzaSyC2DZppXWoTabTCjbqWDCPV9GDbIr_7dqI"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "88537798095-3f7ggelv2irvaol87med3s7c4u7hv3uh.apps.googleusercontent.com",
+              "client_id": "1087652730233-4fnr7u1pg2f2kmijeunle8s1tnhhdv6l.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
