@@ -28,6 +28,15 @@ const InfoConsultaScreen = ({navigation, route}) => {
                 </TouchableOpacity>
             </View>;
         }
+        if (item.estado){
+            return(
+                <TouchableOpacity style={styles.btnViaje}
+                onPress={()=>navigation.goBack()}
+                >
+                    <Text style={{color: '#fff', fontWeight: 'bold', fontSize: 15}}>Agendar</Text>
+                </TouchableOpacity>
+            )
+        }
         return null;
 
     };
@@ -49,6 +58,9 @@ const InfoConsultaScreen = ({navigation, route}) => {
                     <Text style={styles.texto}>Fecha: {item.fecha}</Text>
                     <Text style={styles.texto}>Hora: {item.hora}</Text>
                     <Text style={styles.texto}>Dirección {item.direccion}</Text>
+
+
+
                     <BotonesAcciones/>
                 </View>
             </ScrollView>

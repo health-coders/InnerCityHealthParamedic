@@ -1,33 +1,35 @@
 import React from 'react';
-import {StyleSheet, Text} from 'react-native';
+import {FlatList, StyleSheet, Text} from 'react-native';
 import TarjetaConsulta from "../../components/tarjetaCosulta/TarjetaConsulta";
+import {connect} from 'react-redux';
 
-const DisponiblesScreen = () => {
-
-    const info = {
-        tipo: 'General',
-        fecha: '25/04/2021',
-        hora: '18:00',
-        direccion: 'Crra 85',
-        estado: false,
-        descripcion: 'Me siento mal',
-        nombrePaciente: 'Luis Alvarez',
-    }
+const DisponiblesScreen = ({navigation, citasDisponibles}) => {
 
     return (
         <>
-            <Text style={styles.title}>Consultas </Text>
-            <TarjetaConsulta info={info} />
+            <FlatList
+                style={styles.contenedor}
+                data={citasDisponibles}
+                keyExtractor={(cita) => cita.id}
+                renderItem={(cita) => (
+                    <TarjetaConsulta
+                        info={cita}
+                        navigation={navigation}
+                    />
+                )}
+            />
         </>
     );
 };
 
 const styles = StyleSheet.create({
-    title: {
-        fontWeight: 'bold',
-        fontSize: 37,
-        marginVertical: 20
+    contenedor: {
+        flex: 1,
+        paddingTop: 10,
     },
 });
 
-export default DisponiblesScreen;
+const mapStateToProps = state => ({
+    citasDisponibles: state.citasDisponibles
+})
+export default connect (mapStateToProps, null) (DisponiblesScreen);

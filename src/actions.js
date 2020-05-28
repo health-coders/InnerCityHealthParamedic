@@ -9,3 +9,9 @@ export const eliminarCitaPendiente = (citaEliminar) => ({
     type: ELIMINAR_CITA_PENDIENTE,
     payload: citaEliminar,
 });
+export const GUARDAR_CITA_DISPONIBLES = 'GUARDAR_CITA_DISPONIBLES';
+export const guardarCitaDisponibles = (citas) => ({
+    type: GUARDAR_CITA_DISPONIBLES,
+    payload: citas,
+});
+

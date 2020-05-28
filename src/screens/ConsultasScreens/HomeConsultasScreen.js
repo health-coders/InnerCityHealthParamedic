@@ -1,14 +1,55 @@
 import React, {useEffect} from 'react';
 import {StyleSheet, Text, TouchableOpacity} from 'react-native';
 import {connect} from 'react-redux';
-import {guardarCitasPendientes} from '../../actions';
+import {guardarCitaDisponibles, guardarCitasPendientes} from '../../actions';
 
-const HomeConsultasScreen = ({navigation, onGuardarCitasPendientes}) => {
+const HomeConsultasScreen = ({navigation, onGuardarCitasPendientes, onGuardarCitasDisponibles}) => {
 
     useEffect(() => {
+        onGuardarCitasDisponibles([{
+            id: '1',
+            tipo: 'General',
+            nombrePaciente: 'Franky Guevara',
+            fecha: 'Hoy',
+            hora: 'Ahora',
+            estado: true,
+            descripcion: 'Descripción 1 muy crack de la cita',
+            direccion: 'Cra 84 #33 AA-01',
+        },
+            {
+                id: '2',
+                tipo: 'General',
+                nombrePaciente: 'Prince Bostock',
+                fecha: 'Hoy',
+                hora: 'Ahora',
+                estado: true,
+                descripcion: 'Descripción 1 muy crack de la cita',
+                direccion: 'Cra 84 #33 AA-01',
+            },
+            {
+                id: '3',
+                tipo: 'General',
+                nombrePaciente: 'Ayomide Henson',
+                fecha: 'Hoy',
+                hora: 'Ahora',
+                estado: true,
+                descripcion: 'Descripción 2 muy crack de la cita',
+                direccion: 'Cra 84 #33 AA-01',
+            },
+            {
+                id: '4',
+                tipo: 'General',
+                nombrePaciente: 'Madison Welsh',
+                fecha: 'Hoy',
+                hora: 'Ahora',
+                estado: true,
+                descripcion: 'Descripción 3 muy crack de la cita',
+                direccion: 'Cra 84 #33 AA-01',
+            },
+        ]);
         onGuardarCitasPendientes([
             {
-                id:'1',
+                id: '1',
                 tipo: 'General',
                 nombrePaciente: 'Hernan Pérez',
                 fecha: 'Hoy',
@@ -18,7 +59,7 @@ const HomeConsultasScreen = ({navigation, onGuardarCitasPendientes}) => {
                 direccion: 'Cra 84 #33 AA-01',
             },
             {
-                id:'2',
+                id: '2',
                 tipo: 'General',
                 nombrePaciente: 'Luis Pérez',
                 fecha: 'Hoy',
@@ -28,7 +69,7 @@ const HomeConsultasScreen = ({navigation, onGuardarCitasPendientes}) => {
                 direccion: 'Cra 84 #33 AA-01',
             },
             {
-                id:'3',
+                id: '3',
                 tipo: 'General',
                 nombrePaciente: 'Andrés Pérez',
                 fecha: 'Hoy',
@@ -38,7 +79,7 @@ const HomeConsultasScreen = ({navigation, onGuardarCitasPendientes}) => {
                 direccion: 'Cra 84 #33 AA-01',
             },
             {
-                id:'4',
+                id: '4',
                 tipo: 'General',
                 nombrePaciente: 'Hermejilda Bedoya',
                 fecha: 'Hoy',
@@ -68,10 +109,11 @@ const HomeConsultasScreen = ({navigation, onGuardarCitasPendientes}) => {
                 <Text style={styles.textoBtn}> CONSULTAS PENDIENTES</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.btnPrincipal}>
+            <TouchableOpacity style={styles.btnPrincipal}
+                              onPress={() => navigation.navigate('Registradas')}>
                 <Text
                     style={styles.textoBtn}
-                    onPress={() => navigation.navigate('Registradas')}
+
                 >REGISTRO CONSULTAS
                 </Text>
             </TouchableOpacity>
@@ -105,6 +147,7 @@ const styles = StyleSheet.create({
 
 const mapDispatchToProps = dispatch => ({
     onGuardarCitasPendientes: citas => dispatch(guardarCitasPendientes(citas)),
+    onGuardarCitasDisponibles: citas => dispatch(guardarCitaDisponibles(citas))
 });
 
 export default connect(null, mapDispatchToProps)(HomeConsultasScreen);

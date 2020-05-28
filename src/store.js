@@ -1,8 +1,9 @@
 import {createStore, combineReducers} from 'redux';
-import {citasPendientes} from './reducers';
+import {citasDisponibles, citasPendientes} from './reducers';
 
 const reducers = {
-    citasPendientes
+    citasPendientes,
+    citasDisponibles
 };
 
 const rootReducer = combineReducers(reducers);
