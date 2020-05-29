@@ -110,11 +110,11 @@ const HomeConsultasScreen = ({navigation, onGuardarCitasPendientes, onGuardarCit
             </TouchableOpacity>
 
             <TouchableOpacity style={styles.btnPrincipal}
-                              onPress={() => navigation.navigate('Registradas')}>
+                              onPress={() => navigation.navigate('Registradas')}
+            >
                 <Text
                     style={styles.textoBtn}
-
-                >REGISTRO CONSULTAS
+                >CONSULTAS REGISTRADAS
                 </Text>
             </TouchableOpacity>
 
@@ -127,7 +127,6 @@ const styles = StyleSheet.create({
     textoBtn: {
         fontWeight: 'bold',
         fontSize: 40,
-        justifyContent: 'center',
         textAlign: 'center',
         alignContent: 'center',
     },
@@ -142,6 +141,7 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.8,
         shadowRadius: 2,
         elevation: 3,
+        justifyContent: 'center',
     },
 });
 

@@ -5,8 +5,7 @@ export const citasPendientes = (state = [], action) => {
 
     switch (type) {
         case GUARDAR_CITAS_PENDIENTES:{
-            const citasPendientes = payload;
-            return state.concat(citasPendientes);
+            return payload;
         }
         case ELIMINAR_CITA_PENDIENTE:{
             const citaEliminar = payload;
@@ -22,8 +21,7 @@ export const citasDisponibles = (state = [], action) => {
 
     switch (type) {
         case GUARDAR_CITA_DISPONIBLES:{
-            const citasDisponibles = payload;
-            return state.concat(citasDisponibles);
+            return payload;
         }
         default:
             return state;
