@@ -5,14 +5,11 @@ const HomeScreen = ({navigation}) => {
     return (
         <>
             <TouchableOpacity style={styles.btnPrincipal}>
-
                 <Text style={styles.textoBtn}>Ver{'\n'}alertas</Text>
-
             </TouchableOpacity>
+
             <TouchableOpacity style={styles.btnPrincipal} onPress={()=>
-
                 navigation.navigate('HomeConsultas')
-
             }>
                 <Text style={styles.textoBtn}>Ver{'\n'}consultas</Text>
             </TouchableOpacity>
