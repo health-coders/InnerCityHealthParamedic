@@ -34,7 +34,7 @@ const GoogleAuthButton = () => {
             }
             console.log(error);
         }
-        navigation.navigate('Home')
+        navigation.navigate('Mapa')
     };
 
 
