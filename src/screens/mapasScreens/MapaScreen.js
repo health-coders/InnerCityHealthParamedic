@@ -3,37 +3,45 @@ import {StyleSheet, View, Text, Dimensions} from 'react-native'
 import MapView from 'react-native-maps'
 import {set} from "react-native-reanimated";
 
-const MapaScreen=()=>{
+const MapaScreen = () => {
     //localización
-    const [focusedLocation,setFocusedLocation] =useState({
-        latitude:6.2437877,
-        longitude:-75.6089668,
+    const [focusedLocation, setFocusedLocation] = useState({
+        latitude: 6.2437877,
+        longitude: -75.6089668,
         latitudeDelta: 0.0122,
-        longitudeDelta: Dimensions.get('window').width/Dimensions.get('window').height * 0.0122
+        longitudeDelta: Dimensions.get('window').width / Dimensions.get('window').height * 0.0122
     })
     //marcador
-    const [locationChoosen,setLocationChoosen] = useState(false);
-    const [marker,setMarker] = useState(null)
+    const [locationChoosen, setLocationChoosen] = useState(false);
+    const [marker, setMarker] = useState(null)
+    const [movement, setMovement] = useState({})
 
-    const pickLocationByClick= () =>{
+    const pickLocationByClick = () => {
         const coords = event.nativeEvent.coordinate;
         console.log(coords)
         setFocusedLocation({
-            ...focusedLocation,latitude: coords.latitude,
-            longitude: coords.longitude
+            ...focusedLocation,
+            latitude: coords.latitude,
+            longitude: coords.longitude,
+        })
+        movement.animateToRegion({
+            ...focusedLocation,
+            latitude: coords.latitude,
 
         })
         setLocationChoosen(true);
     }
 
-    if (locationChoosen){
+    if (locationChoosen) {
         setMarker(<MapView.Marker coordinate={focusedLocation}/>)
     }
-    return(
+
+
+    return (
         <>
             <MapView
                 initialRegion={focusedLocation}
-                region={focusedLocation}
+                ref={ref => setMovement(ref)}
                 style={styles.map}
                 onPress={pickLocationByClick()}
             >
@@ -44,11 +52,11 @@ const MapaScreen=()=>{
         </>
     );
 
-    }
+}
 
 const styles = StyleSheet.create({
-    map:{
-      width:'100%',
+    map: {
+        width: '100%',
         height: 250,
     }
 })
