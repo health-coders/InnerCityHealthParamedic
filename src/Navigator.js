@@ -16,7 +16,7 @@ const Stack = createStackNavigator();
 
 const Navigation = () => (
     <NavigationContainer>
-        <Stack.Navigator initialRouteName='Mapa'>
+        <Stack.Navigator >
             <Stack.Screen name='LoginIndex' component={LoginIndexScreen} options={{headerShown: false}} />
             <Stack.Screen name='Home' component={HomeScreen} options={{headerShown: false}}/>
             <Stack.Screen name='HomeConsultas' component={HomeConsultasScreen} options={{headerShown: false}}/>
